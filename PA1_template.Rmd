@@ -143,8 +143,8 @@ MeanStepsDaytypeInt<-summarise_each(DataDaytype,funs(mean, "mean", mean(., na.rm
 ```
 
 ```{r, echo=TRUE}
-par(mfcol = c(2,1))
 xyplot(MeanStepsDaytypeInt$mean~MeanStepsDaytypeInt$interval | MeanStepsDaytypeInt$daytype,
        type = "l", xlim = c(0,2500),
-       xlab = "Interval", ylab = "Mean number of steps")
+       xlab = "Interval", ylab = "Mean number of steps",
+       layout=c(1,2))
 ```

@@ -12,6 +12,22 @@ In this assignment de dplyr and the lattice package will be used and loaded auto
 
 ```r
 library("dplyr")
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+## 
+## The following object is masked from 'package:stats':
+## 
+##     filter
+## 
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+```r
 library("lattice")
 ```
 
@@ -206,10 +222,10 @@ MeanStepsDaytypeInt<-summarise_each(DataDaytype,funs(mean, "mean", mean(., na.rm
 
 
 ```r
-par(mfcol = c(2,1))
 xyplot(MeanStepsDaytypeInt$mean~MeanStepsDaytypeInt$interval | MeanStepsDaytypeInt$daytype,
        type = "l", xlim = c(0,2500),
-       xlab = "Interval", ylab = "Mean number of steps")
+       xlab = "Interval", ylab = "Mean number of steps",
+       layout=c(1,2))
 ```
 
 ![plot of chunk unnamed-chunk-19](figure/unnamed-chunk-19-1.png) 
